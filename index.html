@@ -3,16 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Interactive Arabic Alphabet</title>
+  <title>Interactive Arabic Alphabet with Keyboard & TTS</title>
+  <!-- Font: Noto Naskh Arabic -->
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&display=swap"
+  />
   <style>
     body {
-      font-family: Noto-Naskh-Arabic;
+      font-family: 'Noto Naskh Arabic', sans-serif;
       text-align: center;
       background-color: #fff;
       padding: 20px;
       margin: 0;
       direction: rtl;
     }
+    /* Keyboard & TTS Section */
+    .top-section {
+      margin-bottom: 30px;
+    }
+    .input-container {
+      margin-bottom: 10px;
+    }
+    #compose-input {
+      font-size: 1.3rem;
+      padding: 5px;
+      width: 60%;
+      text-align: center;
+      font-family: 'Noto Naskh Arabic', sans-serif;
+    }
+    .keyboard {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+    .key-btn {
+      font-size: 1.3rem;
+      padding: 5px 10px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      background: #eee;
+      user-select: none;
+    }
+    .key-btn:hover {
+      background: #ddd;
+    }
+    .tts-buttons {
+      margin-bottom: 20px;
+    }
+    .tts-buttons button {
+      font-size: 1.4rem;
+      padding: 5px 12px;
+      cursor: pointer;
+      margin: 0 5px;
+    }
+
+    /* Chart styling */
     .table {
       display: inline-block;
       margin: auto;
@@ -29,6 +77,7 @@
       cursor: pointer;
       position: relative;
       margin: 0 4px;
+      font-family: 'Noto Naskh Arabic', sans-serif;
     }
     /* Only show tooltip if data-name is present */
     .letter[data-name]:hover::after {
@@ -43,6 +92,7 @@
       padding: 3px 6px;
       border-radius: 4px;
       white-space: nowrap;
+      pointer-events: none;
     }
 
     /* Arrow */
@@ -72,11 +122,66 @@
     .accent-letter {
       color: #555;
       cursor: default;
+      font-family: 'Noto Naskh Arabic', sans-serif;
     }
   </style>
 </head>
+
 <body>
 
+<!-- TOP SECTION: On-Screen Keyboard & TTS -->
+<div class="top-section">
+  <div class="input-container">
+    <input type="text" id="compose-input" placeholder="اكتب هنا..." />
+  </div>
+
+  <div class="keyboard">
+    <!-- Basic letters -->
+    <span class="key-btn">ا</span>
+    <span class="key-btn">ب</span>
+    <span class="key-btn">ت</span>
+    <span class="key-btn">ث</span>
+    <span class="key-btn">ج</span>
+    <span class="key-btn">ح</span>
+    <span class="key-btn">خ</span>
+    <span class="key-btn">د</span>
+    <span class="key-btn">ذ</span>
+    <span class="key-btn">ر</span>
+    <span class="key-btn">ز</span>
+    <span class="key-btn">س</span>
+    <span class="key-btn">ش</span>
+    <span class="key-btn">ص</span>
+    <span class="key-btn">ض</span>
+    <span class="key-btn">ط</span>
+    <span class="key-btn">ظ</span>
+    <span class="key-btn">ع</span>
+    <span class="key-btn">غ</span>
+    <span class="key-btn">ف</span>
+    <span class="key-btn">ق</span>
+    <span class="key-btn">ك</span>
+    <span class="key-btn">ل</span>
+    <span class="key-btn">م</span>
+    <span class="key-btn">ن</span>
+    <span class="key-btn">ه</span>
+    <span class="key-btn">و</span>
+    <span class="key-btn">ي</span>
+    <!-- Four basic accents + hamza -->
+    <span class="key-btn">َ</span> <!-- a/fatha -->
+    <span class="key-btn">ِ</span> <!-- i/kasra -->
+    <span class="key-btn">ُ</span> <!-- u/damma -->
+    <span class="key-btn">ء</span> <!-- hamza -->
+    <!-- Space bar: labeled 'Space', inserts an actual space ' ' -->
+    <span class="key-btn" data-char=" " style="min-width:60px;">___</span>
+  </div>
+
+  <div class="tts-buttons">
+    <!-- Use icons instead of text -->
+    <button id="speak-btn">🔉</button>
+    <button id="clear-btn">🗑️</button>
+  </div>
+</div>
+
+<!-- ALPHABET CHART -->
 <div class="table">
 
   <!-- ALIF -->
@@ -89,18 +194,16 @@
     <span class="letter" data-audio="audio/alif.mp3" data-name="ألف">ـا</span>
   </div>
   <div class="hidden-row">
+    <!-- Accented forms (a, i, u) for each of the 4 positions -->
     <span class="letter accent-letter">اَ</span>
     <span class="letter accent-letter">اِ</span>
     <span class="letter accent-letter">اُ</span>
-
     <span class="letter accent-letter">اَ</span>
     <span class="letter accent-letter">اِ</span>
     <span class="letter accent-letter">اُ</span>
-
     <span class="letter accent-letter">ـاَ</span>
     <span class="letter accent-letter">ـاِ</span>
     <span class="letter accent-letter">ـاُ</span>
-
     <span class="letter accent-letter">ـاَ</span>
     <span class="letter accent-letter">ـاِ</span>
     <span class="letter accent-letter">ـاُ</span>
@@ -118,21 +221,18 @@
     <span class="letter accent-letter">بَ</span>
     <span class="letter accent-letter">بِ</span>
     <span class="letter accent-letter">بُ</span>
-
     <span class="letter accent-letter">ﺑَـ</span>
     <span class="letter accent-letter">ﺑِـ</span>
     <span class="letter accent-letter">ﺑُـ</span>
-
     <span class="letter accent-letter">ـﺒَـ</span>
     <span class="letter accent-letter">ـﺒِـ</span>
     <span class="letter accent-letter">ـﺒُـ</span>
-
     <span class="letter accent-letter">ـبَ</span>
     <span class="letter accent-letter">ـبِ</span>
     <span class="letter accent-letter">ـبُ</span>
   </div>
 
-  <!-- TA -->
+   <!-- TA -->
   <div class="row">
     <span class="arrow">▾</span>
     <span class="letter" data-audio="audio/ta.mp3" data-name="تاء">ت</span>
@@ -808,13 +908,44 @@
     <span class="letter accent-letter">ـيُ</span>
   </div>
 
+
 </div> <!-- End of .table -->
 
-<!-- Hidden audio element -->
+<!-- Hidden audio element for letter audios -->
 <audio id="audio-player"></audio>
 
 <script>
-  // On letter click, play audio if data-audio is present
+  // 1) On-Screen Keyboard Logic
+  const composeInput = document.getElementById('compose-input');
+  const keys = document.querySelectorAll('.key-btn');
+
+  keys.forEach(key => {
+    key.addEventListener('click', () => {
+      // If there's a data-char attribute, use that; otherwise use textContent
+      const char = key.getAttribute('data-char') || key.textContent;
+      composeInput.value += char;
+    });
+  });
+
+  // 2) TTS Handling
+  const speakBtn = document.getElementById('speak-btn');
+  const clearBtn = document.getElementById('clear-btn');
+
+  speakBtn.addEventListener('click', () => {
+    const textToSpeak = composeInput.value.trim();
+    if (textToSpeak.length > 0) {
+      const utterance = new SpeechSynthesisUtterance(textToSpeak);
+      // Set language to Arabic
+      utterance.lang = 'ar-SA';
+      speechSynthesis.speak(utterance);
+    }
+  });
+
+  clearBtn.addEventListener('click', () => {
+    composeInput.value = '';
+  });
+
+  // 3) Audio on letter clicks
   document.querySelectorAll('.letter').forEach(letter => {
     letter.addEventListener('click', () => {
       const audioSrc = letter.getAttribute('data-audio');
@@ -826,13 +957,11 @@
     });
   });
 
-  // Arrow toggle for showing/hiding the accent row
+  // 4) Expand/Collapse accent rows
   document.querySelectorAll('.arrow').forEach((arrow, index) => {
     arrow.addEventListener('click', () => {
       const hiddenRow = document.querySelectorAll('.hidden-row')[index];
-      // Toggle display between none/flex
       hiddenRow.style.display = (hiddenRow.style.display === 'flex') ? 'none' : 'flex';
-      // Toggle arrow rotation
       arrow.classList.toggle('expanded');
     });
   });
