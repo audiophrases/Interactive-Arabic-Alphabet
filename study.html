@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Arabic Alphabet Study</title>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&display=swap"
+  />
+  <style>
+    body {
+      margin: 20px;
+      font-family: 'Noto Naskh Arabic', sans-serif;
+      background-color: #fafafa;
+      color: #000;
+      text-align: center;
+    }
+    .tabs {
+      margin-bottom: 1em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+    /* Home icon link */
+    .home-link {
+      font-size: 1.2em;
+     
+      border: none;
+      border-radius: 4px;
+
+      text-decoration: none;
+      color: #333;
+      cursor: pointer;
+    }
+    .home-link:hover {
+      background: #ccc;
+      color: #000;
+    }
+    .tab-button {
+      font-size: 1.2em;
+      padding: 5px 10px;
+      margin: 0;
+      cursor: pointer;
+      background: #eee;
+      border: none;
+      border-radius: 5px;
+    }
+    .tab-button:hover {
+      background: #ddd;
+    }
+    .tab-button.active {
+      background: #ccc;
+    }
+    .tabContent {
+      display: none; /* hidden by default */
+    }
+    .tabContent.active {
+      display: block; /* show if active */
+    }
+    .group {
+      display: inline-block; /* shrink color block to content width */
+      padding: 10px;
+      margin: 10px 5px;
+      border-radius: 5px;
+      vertical-align: top;
+    }
+    .letter-forms {
+      margin: 4px;
+      display: inline-block;
+      cursor: pointer;
+      position: relative; /* for tooltip */
+      font-size: 1.8em;
+    }
+    /* Tooltip using title attribute */
+    .letter-forms[title]:hover::after {
+      content: attr(title);
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: #fff;
+      font-size: 0.8rem;
+      padding: 3px 6px;
+      border-radius: 4px;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Row with home icon link + tab buttons -->
+<div class="tabs">
+  <!-- Home icon link -->
+  <a href="index.html" class="home-link">🏠</a>
+
+  <!-- Dots = ●, Shapes = △, Phonetics = ♫ -->
+  <button class="tab-button active" id="dotsBtn" onclick="showTab('dotsTab')">●</button>
+  <button class="tab-button" id="shapesBtn" onclick="showTab('shapesTab')">△</button>
+  <button class="tab-button" id="phonBtn" onclick="showTab('phonTab')">♫</button>
+</div>
+
+<!-- DOTS TAB -->
+<div id="dotsTab" class="tabContent active">
+  <!-- 1 DOT ABOVE -->
+  <div class="group" style="background-color: #cce5ff;">
+    <!-- Kha: خ خـ ـخـ ـخ -->
+    <span class="letter-forms" title="Kha" onclick="playSound('Kha')">
+      خ خـ ـخـ ـخ
+    </span>
+    <!-- Ghayn: غ غـ ـغـ ـغ -->
+    <span class="letter-forms" title="Ghayn" onclick="playSound('Ghayn')">
+      غ غـ ـغـ ـغ
+    </span>
+    <!-- Nun: ن نـ ـنـ ـن -->
+    <span class="letter-forms" title="Nun" onclick="playSound('Nun')">
+      ن نـ ـنـ ـن
+    </span>
+    <!-- Fa: ف فـ ـفـ ـف -->
+    <span class="letter-forms" title="Fa" onclick="playSound('Fa')">
+      ف فـ ـفـ ـف
+    </span>
+  </div>
+
+  <!-- 2 DOTS ABOVE -->
+  <div class="group" style="background-color: #ffe6e6;">
+    <!-- Ta: ت تـ ـتـ ـت -->
+    <span class="letter-forms" title="Ta" onclick="playSound('Ta')">
+      ت تـ ـتـ ـت
+    </span>
+    <!-- Qaf: ق قـ ـقـ ـق -->
+    <span class="letter-forms" title="Qaf" onclick="playSound('Qaf')">
+      ق قـ ـقـ ـق
+    </span>
+  </div>
+
+  <!-- 1  or 2 DOT BELOW -->
+  <div class="group" style="background-color: #d9f2d9;">
+    <!-- Ba: ب بـ ـبـ ـب -->
+    <span class="letter-forms" title="Ba" onclick="playSound('Ba')">
+      ب بـ ـبـ ـب
+    </span>
+    <!-- Ya: ي يـ ـيـ ـي -->
+    <span class="letter-forms" title="Ya" onclick="playSound('Ya')">
+      ي يـ ـيـ ـي
+    </span>
+  </div>
+
+  <!-- 3 DOTS ABOVE -->
+  <div class="group" style="background-color: #ffe6ff;">
+    <!-- Tha: ث ثـ ـثـ ـث -->
+    <span class="letter-forms" title="Tha" onclick="playSound('Tha')">
+      ث ثـ ـثـ ـث
+    </span>
+    <!-- Shin: ش شـ ـشـ ـش -->
+    <span class="letter-forms" title="Shin" onclick="playSound('Shin')">
+      ش شـ ـشـ ـش
+    </span>
+  </div>
+
+  <!-- NEW GROUP: 1 or 2 DOTS ABOVE -->
+  <div class="group" style="background-color: #e7e7ff;">
+    <!-- All letters from '1 Dot Above' + '2 Dots Above' repeated -->
+    <!-- 1 Dot Above group: Kha, Ghayn, Nun, Fa -->
+    <span class="letter-forms" title="Kha" onclick="playSound('Kha')">
+      خ خـ ـخـ ـخ
+    </span>
+    <span class="letter-forms" title="Ghayn" onclick="playSound('Ghayn')">
+      غ غـ ـغـ ـغ
+    </span>
+    <span class="letter-forms" title="Nun" onclick="playSound('Nun')">
+      ن نـ ـنـ ـن
+    </span>
+    <span class="letter-forms" title="Fa" onclick="playSound('Fa')">
+      ف فـ ـفـ ـف
+    </span>
+    <!-- 2 Dots Above group: Ta, Qaf -->
+    <span class="letter-forms" title="Ta" onclick="playSound('Ta')">
+      ت تـ ـتـ ـت
+    </span>
+    <span class="letter-forms" title="Qaf" onclick="playSound('Qaf')">
+      ق قـ ـقـ ـق
+    </span>
+  </div>
+
+ 
+</div>
+
+<!-- SHAPES TAB -->
+<div id="shapesTab" class="tabContent">
+  <!-- Group 1: (Ya, Nun, Tha, Ta, Ba, Dal, Dhal, Ra, Zay) -->
+  <div class="group" style="background-color: #ffccff;">
+    <span class="letter-forms" title="Ya" onclick="playSound('Ya')">
+      ي يـ ـيـ ـي
+    </span>
+    <span class="letter-forms" title="Nun" onclick="playSound('Nun')">
+      ن نـ ـنـ ـن
+    </span>
+    <span class="letter-forms" title="Tha" onclick="playSound('Tha')">
+      ث ثـ ـثـ ـث
+    </span>
+    <span class="letter-forms" title="Ta" onclick="playSound('Ta')">
+      ت تـ ـتـ ـت
+    </span>
+    <span class="letter-forms" title="Ba" onclick="playSound('Ba')">
+      ب بـ ـبـ ـب
+    </span>
+    <span class="letter-forms" title="Dal" onclick="playSound('Dal')">
+      د د ـد ـد
+    </span>
+    <span class="letter-forms" title="Dhal" onclick="playSound('Dhal')">
+      ذ ذ ـذ ـذ
+    </span>
+    <span class="letter-forms" title="Ra" onclick="playSound('Ra')">
+      ر ر ـر ـر
+    </span>
+    <span class="letter-forms" title="Zay" onclick="playSound('Zay')">
+      ز ز ـز ـز
+    </span>
+  </div>
+
+  <!-- Group 2: (Fa, Qaf, Waw) -->
+  <div class="group" style="background-color: #cce5e5;">
+    <span class="letter-forms" title="Fa" onclick="playSound('Fa')">
+      ف فـ ـفـ ـف
+    </span>
+    <span class="letter-forms" title="Qaf" onclick="playSound('Qaf')">
+      ق قـ ـقـ ـق
+    </span>
+    <span class="letter-forms" title="Waw" onclick="playSound('Waw')">
+      و و ـو ـو
+    </span>
+  </div>
+
+  <!-- Group 3: (Alif first), then Lam, Kaf -->
+  <div class="group" style="background-color: #d9f2d9;">
+    <span class="letter-forms" title="Alif" onclick="playSound('Alif')">
+      ا ا ـا ـا
+    </span>
+    <span class="letter-forms" title="Lam" onclick="playSound('Lam')">
+      ل لـ ـلـ ـل
+    </span>
+    <span class="letter-forms" title="Kaf" onclick="playSound('Kaf')">
+      ك كـ ـكـ ـك
+    </span>
+  </div>
+
+  <!-- Group 4: Ha (ه) with Mim -->
+  <div class="group" style="background-color: #ffe6cc;">
+    <span class="letter-forms" title="Ha" onclick="playSound('Ha')">
+      ه هـ ـهـ ـه
+    </span>
+    <span class="letter-forms" title="Mim" onclick="playSound('Mim')">
+      م مـ ـمـ ـم
+    </span>
+  </div>
+
+  <!-- Group: Jeem, Hha, Kha, Sin, Shin, Tah, Zah, Ayn, Ghayn leftover? 
+       But we separate Sad & Dad in their own group. 
+  -->
+
+  <!-- New group for Sad & Dad alone -->
+  <div class="group" style="background-color: #ffccf2;">
+    <span class="letter-forms" title="Sad" onclick="playSound('Sad')">
+      ص صـ ـصـ ـص
+    </span>
+    <span class="letter-forms" title="Dad" onclick="playSound('Dad')">
+      ض ضـ ـضـ ـض
+    </span>
+  </div>
+
+  <!-- Another group for Jeem, Hha, Kha -->
+<div class="group" style="background-color: #e6ccff;">
+
+    <span class="letter-forms" title="Jim" onclick="playSound('Jeem')">
+      ج جـ ـجـ ـج
+    </span>
+    <span class="letter-forms" title="Hha" onclick="playSound('Haa')">
+      ح حـ ـحـ ـح
+    </span>
+    <span class="letter-forms" title="Kha" onclick="playSound('Kha')">
+      خ خـ ـخـ ـخ
+    </span>
+  </div>
+ <!-- Another group for, Sin, Shin, Tah, Zah, Ayn, Ghayn -->
+  <div class="group" style="background-color: #ffffe6;">
+    <span class="letter-forms" title="Sin" onclick="playSound('Sin')">
+      س سـ ـسـ ـس
+    </span>
+    <span class="letter-forms" title="Shin" onclick="playSound('Shin')">
+      ش شـ ـشـ ـش
+    </span>
+ </div>
+ <!-- Another group for, Sin, Shin, Tah, Zah, Ayn, Ghayn -->
+  <div class="group" style="background-color: #e6ffff;">
+    <span class="letter-forms" title="Tah" onclick="playSound('Tta')">
+      ط طـ ـطـ ـط
+    </span>
+    <span class="letter-forms" title="Zah" onclick="playSound('Zay')">
+      ظ ظـ ـظـ ـظ
+    </span>
+ </div>
+ <!-- Another group for, Sin, Shin, Tah, Zah, Ayn, Ghayn -->
+  <div class="group" style="background-color: #ffe6e6;">
+    <span class="letter-forms" title="Ayn" onclick="playSound('Ain')">
+      ع عـ ـعـ ـع
+    </span>
+    <span class="letter-forms" title="Ghayn" onclick="playSound('Ghayn')">
+      غ غـ ـغـ ـغ
+    </span>
+  </div>
+</div>
+
+<!-- PHONETICS TAB (unchanged from prior) -->
+<div id="phonTab" class="tabContent">
+  <!-- Keep the same groups for place/manner, all four forms. -->
+
+  <div class="group" style="background-color: #ffe6e6;">
+    <!-- Labials: Ba, Mim, Fa, Waw -->
+    <span class="letter-forms" title="Ba" onclick="playSound('Ba')">
+      ب بـ ـبـ ـب
+    </span>
+    <span class="letter-forms" title="Mim" onclick="playSound('Mim')">
+      م مـ ـمـ ـم
+    </span>
+    <span class="letter-forms" title="Fa" onclick="playSound('Fa')">
+      ف فـ ـفـ ـف
+    </span>
+    <span class="letter-forms" title="Waw" onclick="playSound('Waw')">
+      و و ـو ـو
+    </span>
+  </div>
+
+  <div class="group" style="background-color: #e6ffe6;">
+    <!-- Dentals/Alveolars: Ta, Dal, Tha, Dhal -->
+    <span class="letter-forms" title="Ta" onclick="playSound('Ta')">
+      ت تـ ـتـ ـت
+    </span>
+    <span class="letter-forms" title="Dal" onclick="playSound('Dal')">
+      د د ـد ـد
+    </span>
+    <span class="letter-forms" title="Tha" onclick="playSound('Tha')">
+      ث ثـ ـثـ ـث
+    </span>
+    <span class="letter-forms" title="Dhal" onclick="playSound('Dhal')">
+      ذ ذ ـذ ـذ
+    </span>
+  </div>
+
+  <div class="group" style="background-color: #e6e6ff;">
+    <!-- Emphatics: Sad, Dad, Tah, Zah -->
+    <span class="letter-forms" title="Sad" onclick="playSound('Sad')">
+      ص صـ ـصـ ـص
+    </span>
+    <span class="letter-forms" title="Dad" onclick="playSound('Dad')">
+      ض ضـ ـضـ ـض
+    </span>
+    <span class="letter-forms" title="Tah" onclick="playSound('Tah')">
+      ط طـ ـطـ ـط
+    </span>
+    <span class="letter-forms" title="Zah" onclick="playSound('Zah')">
+      ظ ظـ ـظـ ـظ
+    </span>
+  </div>
+
+  <div class="group" style="background-color: #ffffe6;">
+    <!-- Pharyngeals: Ha(ح), Ayn(ع) -->
+    <span class="letter-forms" title="Hha" onclick="playSound('Hha')">
+      ح حـ ـحـ ـح
+    </span>
+    <span class="letter-forms" title="Ayn" onclick="playSound('Ayn')">
+      ع عـ ـعـ ـع
+    </span>
+  </div>
+
+  <div class="group" style="background-color: #ffe6ff;">
+    <!-- Nasals: Mim, Nun -->
+    <span class="letter-forms" title="Mim" onclick="playSound('Mim')">
+      م مـ ـمـ ـم
+    </span>
+    <span class="letter-forms" title="Nun" onclick="playSound('Nun')">
+      ن نـ ـنـ ـن
+    </span>
+  </div>
+
+  <div class="group" style="background-color: #e6ffff;">
+    <!-- Velars/Uvulars: Kaf, Qaf, Kha, Ghayn -->
+    <span class="letter-forms" title="Kaf" onclick="playSound('Kaf')">
+      ك كـ ـكـ ـك
+    </span>
+    <span class="letter-forms" title="Qaf" onclick="playSound('Qaf')">
+      ق قـ ـقـ ـق
+    </span>
+    <span class="letter-forms" title="Kha" onclick="playSound('Kha')">
+      خ خـ ـخـ ـخ
+    </span>
+    <span class="letter-forms" title="Ghayn" onclick="playSound('Ghayn')">
+      غ غـ ـغـ ـغ
+    </span>
+  </div>
+
+  <div class="group" style="background-color: #f0e6ff;">
+    <!-- Fricatives: Sin, Shin, Zay, etc. -->
+    <span class="letter-forms" title="Sin" onclick="playSound('Sin')">
+      س سـ ـسـ ـس
+    </span>
+    <span class="letter-forms" title="Shin" onclick="playSound('Shin')">
+      ش شـ ـشـ ـش
+    </span>
+    <span class="letter-forms" title="Zay" onclick="playSound('Zay')">
+      ز ز ـز ـز
+    </span>
+  </div>
+
+  <div class="group" style="background-color: #e6f0e6;">
+    <!-- Alif, Ha(ه) as “misc” or breathy. -->
+    <span class="letter-forms" title="Alif" onclick="playSound('Alif')">
+      ا ا ـا ـا
+    </span>
+    <span class="letter-forms" title="Ha" onclick="playSound('Ha')">
+      ه هـ ـهـ ـه
+    </span>
+  </div>
+
+  <div class="group" style="background-color: #e6f0ff;">
+    <!-- Liquids: Ra, Lam -->
+    <span class="letter-forms" title="Ra" onclick="playSound('Ra')">
+      ر ر ـر ـر
+    </span>
+    <span class="letter-forms" title="Lam" onclick="playSound('Lam')">
+      ل لـ ـلـ ـل
+    </span>
+  </div>
+
+  <div class="group" style="background-color: #ffe6f0;">
+    <!-- Semi-vowels/glides: Waw, Ya -->
+    <span class="letter-forms" title="Waw" onclick="playSound('Waw')">
+      و و ـو ـو
+    </span>
+    <span class="letter-forms" title="Ya" onclick="playSound('Ya')">
+      ي يـ ـيـ ـي
+    </span>
+  </div>
+</div>
+
+<script>
+  // Show/Hide Tabs
+  function showTab(tabId) {
+    document.getElementById('dotsTab').classList.remove('active');
+    document.getElementById('shapesTab').classList.remove('active');
+    document.getElementById('phonTab').classList.remove('active');
+
+    document.getElementById('dotsBtn').classList.remove('active');
+    document.getElementById('shapesBtn').classList.remove('active');
+    document.getElementById('phonBtn').classList.remove('active');
+
+    document.getElementById(tabId).classList.add('active');
+    if (tabId === 'dotsTab') {
+      document.getElementById('dotsBtn').classList.add('active');
+    } else if (tabId === 'shapesTab') {
+      document.getElementById('shapesBtn').classList.add('active');
+    } else if (tabId === 'phonTab') {
+      document.getElementById('phonBtn').classList.add('active');
+    }
+  }
+
+  // Play .mp3 from /audio/<letterName>.mp3
+  function playSound(letterName) {
+    const audio = new Audio('audio/' + letterName + '.mp3');
+    audio.play();
+  }
+</script>
+</body>
+</html>

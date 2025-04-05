@@ -18,19 +18,8 @@
       margin: 0;
       direction: rtl;
     }
-    /* Keyboard & TTS Section */
     .top-section {
       margin-bottom: 30px;
-    }
-    .input-container {
-      margin-bottom: 10px;
-    }
-    #compose-input {
-      font-size: 1.3rem;
-      padding: 5px;
-      width: 60%;
-      text-align: center;
-      font-family: 'Noto Naskh Arabic', sans-serif;
     }
     .keyboard {
       display: inline-flex;
@@ -46,21 +35,56 @@
       border: 1px solid #ccc;
       background: #eee;
       user-select: none;
+      position: relative; /* allows tooltip positioning */
     }
     .key-btn:hover {
       background: #ddd;
     }
-    .tts-buttons {
-      margin-bottom: 20px;
-    }
-    .tts-buttons button {
-      font-size: 1.4rem;
-      padding: 5px 12px;
-      cursor: pointer;
-      margin: 0 5px;
+    /* Show tooltip if data-name is present (not for space key) */
+    .key-btn[data-name]:hover::after {
+      content: attr(data-name);
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: #fff;
+      font-size: 0.9rem;
+      padding: 3px 6px;
+      border-radius: 4px;
+      white-space: nowrap;
+      pointer-events: none;
     }
 
-    /* Chart styling */
+    .input-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 0 auto 20px;
+      max-width: 600px; /* optional limit */
+    }
+    #compose-input {
+      font-size: 1.3rem;
+      padding: 5px;
+      width: 60%;
+      text-align: center;
+      font-family: 'Noto Naskh Arabic', sans-serif;
+    }
+
+    .study-link {
+      font-size: 1.4rem;
+      text-decoration: none;
+      color: #333;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .study-link:hover {
+      color: #000;
+    }
+
+    /* Chart styling (unchanged) */
     .table {
       display: inline-block;
       margin: auto;
@@ -79,7 +103,6 @@
       margin: 0 4px;
       font-family: 'Noto Naskh Arabic', sans-serif;
     }
-    /* Only show tooltip if data-name is present */
     .letter[data-name]:hover::after {
       content: attr(data-name);
       position: absolute;
@@ -94,8 +117,6 @@
       white-space: nowrap;
       pointer-events: none;
     }
-
-    /* Arrow */
     .arrow {
       cursor: pointer;
       font-size: 1rem;
@@ -103,12 +124,9 @@
       user-select: none;
       transition: transform 0.3s;
     }
-    /* Rotate arrow when expanded */
     .arrow.expanded {
       transform: rotate(180deg);
     }
-
-    /* Hidden row for accented letters */
     .hidden-row {
       display: none;
       font-size: 1.8rem;
@@ -117,8 +135,6 @@
       flex-wrap: wrap;
       margin: 0 0 10px 0;
     }
-
-    /* Accent letters: darker gray color, no tooltip */
     .accent-letter {
       color: #555;
       cursor: default;
@@ -129,59 +145,61 @@
 
 <body>
 
-<!-- TOP SECTION: On-Screen Keyboard & TTS -->
 <div class="top-section">
+  <!-- Single row: Clear - [Input] - Speak - Study link -->
   <div class="input-container">
-    <input type="text" id="compose-input" placeholder="كتب هنا..." />
-  </div>
-
-  <div class="keyboard">
-    <!-- Basic letters -->
-    <span class="key-btn">ا</span>
-    <span class="key-btn">ب</span>
-    <span class="key-btn">ت</span>
-    <span class="key-btn">ث</span>
-    <span class="key-btn">ج</span>
-    <span class="key-btn">ح</span>
-    <span class="key-btn">خ</span>
-    <span class="key-btn">د</span>
-    <span class="key-btn">ذ</span>
-    <span class="key-btn">ر</span>
-    <span class="key-btn">ز</span>
-    <span class="key-btn">س</span>
-    <span class="key-btn">ش</span>
-    <span class="key-btn">ص</span>
-    <span class="key-btn">ض</span>
-    <span class="key-btn">ط</span>
-    <span class="key-btn">ظ</span>
-    <span class="key-btn">ع</span>
-    <span class="key-btn">غ</span>
-    <span class="key-btn">ف</span>
-    <span class="key-btn">ق</span>
-    <span class="key-btn">ك</span>
-    <span class="key-btn">ل</span>
-    <span class="key-btn">م</span>
-    <span class="key-btn">ن</span>
-    <span class="key-btn">ه</span>
-    <span class="key-btn">و</span>
-    <span class="key-btn">ي</span>
-    <span class="key-btn">ى</span>
-    <span class="key-btn">ة</span>
-    <!-- Five basic accents + hamza -->
-    <span class="key-btn">َ</span> <!-- a/fatha -->
-    <span class="key-btn">ِ</span> <!-- i/kasra -->
-    <span class="key-btn">ُ</span> <!-- u/damma -->
-    <span class="key-btn">ْ</span> <!-- sukun -->
-    <span class="key-btn">ء</span> <!-- hamza -->
-    <!-- Space bar: labeled 'Space', inserts an actual space ' ' -->
-    <span class="key-btn" data-char=" " style="min-width:60px;">___</span>
-  </div>
-
-  <div class="tts-buttons">
-    <!-- Use icons instead of text -->
+    <a href="study.html" class="study-link">📖</a> 
     <button id="speak-btn">🔉</button>
-    <button id="clear-btn">🗑️</button>
+    <input type="text" id="compose-input" placeholder="كتب هنا..." />
+    <button id="clear-btn">⌦</button>
+
   </div>
+  <!-- Keyboard row -->
+  <div class="keyboard">
+    <!-- Basic letters with data-name -->
+    <span class="key-btn" data-name="Alif">ا</span>
+<span class="key-btn" data-name="Ba">ب</span>
+<span class="key-btn" data-name="Ta">ت</span>
+<span class="key-btn" data-name="Tha">ث</span>
+<span class="key-btn" data-name="Jim">ج</span>
+<span class="key-btn" data-name="Ha">ح</span>
+<span class="key-btn" data-name="Kha">خ</span>
+<span class="key-btn" data-name="Dal">د</span>
+<span class="key-btn" data-name="Dhal">ذ</span>
+<span class="key-btn" data-name="Ra">ر</span>
+<span class="key-btn" data-name="Zay">ز</span>
+<span class="key-btn" data-name="Sin">س</span>
+<span class="key-btn" data-name="Shin">ش</span>
+<span class="key-btn" data-name="Sad">ص</span>
+<span class="key-btn" data-name="Dad">ض</span>
+<span class="key-btn" data-name="Tta">ط</span>
+<span class="key-btn" data-name="Dha">ظ</span>
+<span class="key-btn" data-name="Ain">ع</span>
+<span class="key-btn" data-name="Ghain">غ</span>
+<span class="key-btn" data-name="Fa">ف</span>
+<span class="key-btn" data-name="Qaf">ق</span>
+<span class="key-btn" data-name="Kaf">ك</span>
+<span class="key-btn" data-name="Lam">ل</span>
+<span class="key-btn" data-name="Mim">م</span>
+<span class="key-btn" data-name="Nun">ن</span>
+<span class="key-btn" data-name="Hha">ه</span>
+<span class="key-btn" data-name="Waw">و</span>
+<span class="key-btn" data-name="Ya">ي</span>
+<span class="key-btn" data-name="Alif">ى</span>
+<span class="key-btn" data-name="Ta marbuta">ة</span>
+
+<!-- Accents -->
+<span class="key-btn" data-name="Fatha">َ</span>
+<span class="key-btn" data-name="Kasra">ِ</span>
+<span class="key-btn" data-name="Damma">ُ</span>
+<span class="key-btn" data-name="Sukun">ْ</span>
+<span class="key-btn" data-name="Hamza">ء</span>
+
+    <!-- Space (no tooltip) -->
+    <span class="key-btn" data-char=" " style="min-width:60px;">____</span>
+  </div>
+
+
 </div>
 
 <!-- ALPHABET CHART -->
@@ -938,8 +956,8 @@
     const textToSpeak = composeInput.value.trim();
     if (textToSpeak.length > 0) {
       const utterance = new SpeechSynthesisUtterance(textToSpeak);
-      // Set language to Arabic
-      utterance.lang = 'ar-SA';
+      // *** Set language to Arabic (Morocco) ***
+      utterance.lang = 'ar-MA';
       speechSynthesis.speak(utterance);
     }
   });
