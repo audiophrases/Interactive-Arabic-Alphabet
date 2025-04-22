@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Interactive Arabic Alphabet with Keyboard & TTS</title>
   <!-- Font: Noto Naskh Arabic -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' x='50' text-anchor='middle' font-size='90' font-family='Noto Naskh Arabic'%3E%D8%B9%3C/text%3E%3C/svg%3E" />
+  <!-- Font: Noto Naskh Arabic -->
   <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&display=swap"
@@ -157,7 +159,9 @@
   <!-- Keyboard row -->
   <div class="keyboard">
     <!-- Basic letters with data-name -->
-    <span class="key-btn" data-name="Alif">ا</span>
+<span class="key-btn" data-name="Alif">ا</span>
+<span class="key-btn" data-name="Alif-Hamza">أَ</span>
+<span class="key-btn" data-name="Alif-Hamza">إ</span>
 <span class="key-btn" data-name="Ba">ب</span>
 <span class="key-btn" data-name="Ta">ت</span>
 <span class="key-btn" data-name="Tha">ث</span>
@@ -184,16 +188,19 @@
 <span class="key-btn" data-name="Nun">ن</span>
 <span class="key-btn" data-name="Hha">ه</span>
 <span class="key-btn" data-name="Waw">و</span>
+<span class="key-btn" data-name="Waw-Hamza">ؤ</span>
 <span class="key-btn" data-name="Ya">ي</span>
 <span class="key-btn" data-name="Alif">ى</span>
+<span class="key-btn" data-name="Alif-Hamza">ئ</span>
 <span class="key-btn" data-name="Ta marbuta">ة</span>
+<span class="key-btn" data-name="Hamza">ء</span>
 
 <!-- Accents -->
 <span class="key-btn" data-name="Fatha">َ</span>
 <span class="key-btn" data-name="Kasra">ِ</span>
 <span class="key-btn" data-name="Damma">ُ</span>
 <span class="key-btn" data-name="Sukun">ْ</span>
-<span class="key-btn" data-name="Hamza">ء</span>
+
 
     <!-- Space (no tooltip) -->
     <span class="key-btn" data-char=" " style="min-width:60px;">____</span>
@@ -929,6 +936,20 @@
     <span class="letter accent-letter">ـيُ</span>
   </div>
 
+  <!-- Alif Maqsura -->
+  <div class="row">
+ <span class="arrow">▾</span>
+       <span class="letter" data-audio="audio/alif.mp3" data-name="أليف ماكسورا">ى</span>
+ <span class="letter"></span>  <span class="letter"></span> 
+    <span class="letter" data-audio="audio/alif.mp3" data-name="أليف ماكسورا">ـى</span>
+  </div>
+  <!-- Ta' Marbuta -->
+  <div class="row">
+ <span class="arrow">▾</span>
+       <span class="letter" data-audio="audio/tamarbuta.mp3" data-name="تَاءْ مَرْبُوطَة">ة</span>
+ <span class="letter"></span>  <span class="letter"></span> 
+    <span class="letter" data-audio="audio/tamarbuta.mp3" data-name="تَاءْ مَرْبُوطَة">ـة</span>
+  </div>
 
 </div> <!-- End of .table -->
 
