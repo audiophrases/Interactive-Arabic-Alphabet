@@ -89,20 +89,19 @@
     /* Chart styling (unchanged) */
     .table {
       display: inline-block;
-      margin: auto;
+      margin: 0;
     }
     .row {
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 5px 0;
+      padding: 0;
     }
     .letter {
-      font-size: 2rem;
-      width: 50px;
+      font-size: 4rem;
       cursor: pointer;
       position: relative;
-      margin: 0 4px;
+      margin: 0;
       font-family: 'Noto Naskh Arabic', sans-serif;
     }
     .letter[data-name]:hover::after {
@@ -113,7 +112,7 @@
       transform: translateX(-50%);
       background: #333;
       color: #fff;
-      font-size: 0.9rem;
+      font-size: 3rem;
       padding: 3px 6px;
       border-radius: 4px;
       white-space: nowrap;
@@ -154,804 +153,146 @@
     <button id="speak-btn">🔉</button>
     <input type="text" id="compose-input" placeholder="كتب هنا..." />
     <button id="clear-btn">⌦</button>
-
   </div>
   <!-- Keyboard row -->
   <div class="keyboard">
     <!-- Basic letters with data-name -->
-<span class="key-btn" data-name="Alif">ا</span>
-<span class="key-btn" data-name="Alif-Hamza">أَ</span>
-<span class="key-btn" data-name="Alif-Hamza">إ</span>
-<span class="key-btn" data-name="Ba">ب</span>
-<span class="key-btn" data-name="Ta">ت</span>
-<span class="key-btn" data-name="Tha">ث</span>
-<span class="key-btn" data-name="Jim">ج</span>
-<span class="key-btn" data-name="Ha">ح</span>
-<span class="key-btn" data-name="Kha">خ</span>
-<span class="key-btn" data-name="Dal">د</span>
-<span class="key-btn" data-name="Dhal">ذ</span>
-<span class="key-btn" data-name="Ra">ر</span>
-<span class="key-btn" data-name="Zay">ز</span>
-<span class="key-btn" data-name="Sin">س</span>
-<span class="key-btn" data-name="Shin">ش</span>
-<span class="key-btn" data-name="Sad">ص</span>
-<span class="key-btn" data-name="Dad">ض</span>
-<span class="key-btn" data-name="Tta">ط</span>
-<span class="key-btn" data-name="Dha">ظ</span>
-<span class="key-btn" data-name="Ain">ع</span>
-<span class="key-btn" data-name="Ghain">غ</span>
-<span class="key-btn" data-name="Fa">ف</span>
-<span class="key-btn" data-name="Qaf">ق</span>
-<span class="key-btn" data-name="Kaf">ك</span>
-<span class="key-btn" data-name="Lam">ل</span>
-<span class="key-btn" data-name="Mim">م</span>
-<span class="key-btn" data-name="Nun">ن</span>
-<span class="key-btn" data-name="Hha">ه</span>
-<span class="key-btn" data-name="Waw">و</span>
-<span class="key-btn" data-name="Waw-Hamza">ؤ</span>
-<span class="key-btn" data-name="Ya">ي</span>
-<span class="key-btn" data-name="Alif">ى</span>
-<span class="key-btn" data-name="Alif-Hamza">ئ</span>
-<span class="key-btn" data-name="Ta marbuta">ة</span>
-<span class="key-btn" data-name="Hamza">ء</span>
-
-<!-- Accents -->
-<span class="key-btn" data-name="Fatha">َ</span>
-<span class="key-btn" data-name="Kasra">ِ</span>
-<span class="key-btn" data-name="Damma">ُ</span>
-<span class="key-btn" data-name="Sukun">ْ</span>
-
+    <span class="key-btn" data-name="Alif">ا</span>
+    <span class="key-btn" data-name="Alif-Hamza">أَ</span>
+    <span class="key-btn" data-name="Alif-Hamza">إ</span>
+    <span class="key-btn" data-name="Ba">ب</span>
+    <span class="key-btn" data-name="Ta">ت</span>
+    <span class="key-btn" data-name="Tha">ث</span>
+    <span class="key-btn" data-name="Jim">ج</span>
+    <span class="key-btn" data-name="Ha">ح</span>
+    <span class="key-btn" data-name="Kha">خ</span>
+    <span class="key-btn" data-name="Dal">د</span>
+    <span class="key-btn" data-name="Dhal">ذ</span>
+    <span class="key-btn" data-name="Ra">ر</span>
+    <span class="key-btn" data-name="Zay">ز</span>
+    <span class="key-btn" data-name="Sin">س</span>
+    <span class="key-btn" data-name="Shin">ش</span>
+    <span class="key-btn" data-name="Sad">ص</span>
+    <span class="key-btn" data-name="Dad">ض</span>
+    <span class="key-btn" data-name="Tta">ط</span>
+    <span class="key-btn" data-name="Dha">ظ</span>
+    <span class="key-btn" data-name="Ain">ع</span>
+    <span class="key-btn" data-name="Ghain">غ</span>
+    <span class="key-btn" data-name="Fa">ف</span>
+    <span class="key-btn" data-name="Qaf">ق</span>
+    <span class="key-btn" data-name="Kaf">ك</span>
+    <span class="key-btn" data-name="Lam">ل</span>
+    <span class="key-btn" data-name="Mim">م</span>
+    <span class="key-btn" data-name="Nun">ن</span>
+    <span class="key-btn" data-name="Hha">ه</span>
+    <span class="key-btn" data-name="Waw">و</span>
+    <span class="key-btn" data-name="Waw-Hamza">ؤ</span>
+    <span class="key-btn" data-name="Ya">ي</span>
+    <span class="key-btn" data-name="Alif">ى</span>
+    <span class="key-btn" data-name="Alif-Hamza">ئ</span>
+    <span class="key-btn" data-name="Ta marbuta">ة</span>
+    <span class="key-btn" data-name="Hamza">ء</span>
 
     <!-- Space (no tooltip) -->
     <span class="key-btn" data-char=" " style="min-width:60px;">____</span>
   </div>
-
-
 </div>
 
 <!-- ALPHABET CHART -->
 <div class="table">
-
-  <!-- ALIF -->
   <div class="row">
-    <span class="arrow">▾</span>
-    <!-- Isolated / Initial / Middle / Final -->
-    <span class="letter" data-audio="audio/alif.mp3" data-name="ألف">ا</span>
-    <span class="letter" data-audio="audio/alif.mp3" data-name="ألف">ا</span>
-    <span class="letter" data-audio="audio/alif.mp3" data-name="ألف">ـا</span>
-    <span class="letter" data-audio="audio/alif.mp3" data-name="ألف">ـا</span>
+    <span class="letter" data-audio="audio/alif.mp3" data-name="ألف">ا اـاـا</span>
   </div>
-  <div class="hidden-row">
-    <!-- Accented forms (a, i, u) for each of the 4 positions -->
-    <span class="letter accent-letter">اَ</span>
-    <span class="letter accent-letter">اِ</span>
-    <span class="letter accent-letter">اُ</span>
-    <span class="letter accent-letter">اَ</span>
-    <span class="letter accent-letter">اِ</span>
-    <span class="letter accent-letter">اُ</span>
-    <span class="letter accent-letter">ـاَ</span>
-    <span class="letter accent-letter">ـاِ</span>
-    <span class="letter accent-letter">ـاُ</span>
-    <span class="letter accent-letter">ـاَ</span>
-    <span class="letter accent-letter">ـاِ</span>
-    <span class="letter accent-letter">ـاُ</span>
-  </div>
-
-  <!-- BA -->
   <div class="row">
-    <span class="arrow">▾</span>
-    <span class="letter" data-audio="audio/ba.mp3" data-name="باء">ب</span>
-    <span class="letter" data-audio="audio/ba.mp3" data-name="باء">ﺑـ</span>
-    <span class="letter" data-audio="audio/ba.mp3" data-name="باء">ـﺒـ</span>
-    <span class="letter" data-audio="audio/ba.mp3" data-name="باء">ـب</span>
+    <span class="letter" data-audio="audio/ba.mp3" data-name="باء">ب ببب</span>
   </div>
-  <div class="hidden-row">
-    <span class="letter accent-letter">بَ</span>
-    <span class="letter accent-letter">بِ</span>
-    <span class="letter accent-letter">بُ</span>
-    <span class="letter accent-letter">ﺑَـ</span>
-    <span class="letter accent-letter">ﺑِـ</span>
-    <span class="letter accent-letter">ﺑُـ</span>
-    <span class="letter accent-letter">ـﺒَـ</span>
-    <span class="letter accent-letter">ـﺒِـ</span>
-    <span class="letter accent-letter">ـﺒُـ</span>
-    <span class="letter accent-letter">ـبَ</span>
-    <span class="letter accent-letter">ـبِ</span>
-    <span class="letter accent-letter">ـبُ</span>
-  </div>
-
-   <!-- TA -->
   <div class="row">
-    <span class="arrow">▾</span>
-    <span class="letter" data-audio="audio/ta.mp3" data-name="تاء">ت</span>
-    <span class="letter" data-audio="audio/ta.mp3" data-name="تاء">ﺗـ</span>
-    <span class="letter" data-audio="audio/ta.mp3" data-name="تاء">ـﺘـ</span>
-    <span class="letter" data-audio="audio/ta.mp3" data-name="تاء">ـت</span>
+    <span class="letter" data-audio="audio/ta.mp3" data-name="تاء">ت تتت</span>
   </div>
-  <div class="hidden-row">
-    <span class="letter accent-letter">تَ</span>
-    <span class="letter accent-letter">تِ</span>
-    <span class="letter accent-letter">تُ</span>
-
-    <span class="letter accent-letter">ﺗَـ</span>
-    <span class="letter accent-letter">ﺗِـ</span>
-    <span class="letter accent-letter">ﺗُـ</span>
-
-    <span class="letter accent-letter">ـﺘَـ</span>
-    <span class="letter accent-letter">ـﺘِـ</span>
-    <span class="letter accent-letter">ـﺘُـ</span>
-
-    <span class="letter accent-letter">ـتَ</span>
-    <span class="letter accent-letter">ـتِ</span>
-    <span class="letter accent-letter">ـتُ</span>
-  </div>
-
-  <!-- THA -->
   <div class="row">
-    <span class="arrow">▾</span>
-    <span class="letter" data-audio="audio/tha.mp3" data-name="ثاء">ث</span>
-    <span class="letter" data-audio="audio/tha.mp3" data-name="ثاء">ﺛـ</span>
-    <span class="letter" data-audio="audio/tha.mp3" data-name="ثاء">ـﺜـ</span>
-    <span class="letter" data-audio="audio/tha.mp3" data-name="ثاء">ـث</span>
+    <span class="letter" data-audio="audio/tha.mp3" data-name="ثاء">ث ثثث</span>
   </div>
-  <div class="hidden-row">
-    <span class="letter accent-letter">ثَ</span>
-    <span class="letter accent-letter">ثِ</span>
-    <span class="letter accent-letter">ثُ</span>
-
-    <span class="letter accent-letter">ﺛَـ</span>
-    <span class="letter accent-letter">ﺛِـ</span>
-    <span class="letter accent-letter">ﺛُـ</span>
-
-    <span class="letter accent-letter">ـﺜَـ</span>
-    <span class="letter accent-letter">ـﺜِـ</span>
-    <span class="letter accent-letter">ـﺜُـ</span>
-
-    <span class="letter accent-letter">ـثَ</span>
-    <span class="letter accent-letter">ـثِ</span>
-    <span class="letter accent-letter">ـثُ</span>
-  </div>
-
-  <!-- JEEM -->
   <div class="row">
-    <span class="arrow">▾</span>
-    <span class="letter" data-audio="audio/jeem.mp3" data-name="جيم">ج</span>
-    <span class="letter" data-audio="audio/jeem.mp3" data-name="جيم">ﺟـ</span>
-    <span class="letter" data-audio="audio/jeem.mp3" data-name="جيم">ـﺠـ</span>
-    <span class="letter" data-audio="audio/jeem.mp3" data-name="جيم">ـج</span>
+    <span class="letter" data-audio="audio/jeem.mp3" data-name="جيم">ج ججج</span>
   </div>
-  <div class="hidden-row">
-    <span class="letter accent-letter">جَ</span>
-    <span class="letter accent-letter">جِ</span>
-    <span class="letter accent-letter">جُ</span>
-
-    <span class="letter accent-letter">ﺟَـ</span>
-    <span class="letter accent-letter">ﺟِـ</span>
-    <span class="letter accent-letter">ﺟُـ</span>
-
-    <span class="letter accent-letter">ـﺠَـ</span>
-    <span class="letter accent-letter">ـﺠِـ</span>
-    <span class="letter accent-letter">ـﺠُـ</span>
-
-    <span class="letter accent-letter">ـجَ</span>
-    <span class="letter accent-letter">ـجِ</span>
-    <span class="letter accent-letter">ـجُ</span>
-  </div>
-
-  <!-- HHA -->
   <div class="row">
-    <span class="arrow">▾</span>
-    <span class="letter" data-audio="audio/ha.mp3" data-name="حاء">ح</span>
-    <span class="letter" data-audio="audio/ha.mp3" data-name="حاء">ﺣـ</span>
-    <span class="letter" data-audio="audio/ha.mp3" data-name="حاء">ـﺤـ</span>
-    <span class="letter" data-audio="audio/ha.mp3" data-name="حاء">ـح</span>
+    <span class="letter" data-audio="audio/ha.mp3" data-name="حاء">ح حجح</span>
   </div>
-  <div class="hidden-row">
-    <span class="letter accent-letter">حَ</span>
-    <span class="letter accent-letter">حِ</span>
-    <span class="letter accent-letter">حُ</span>
-
-    <span class="letter accent-letter">ﺣَـ</span>
-    <span class="letter accent-letter">ﺣِـ</span>
-    <span class="letter accent-letter">ﺣُـ</span>
-
-    <span class="letter accent-letter">ـﺤَـ</span>
-    <span class="letter accent-letter">ـﺤِـ</span>
-    <span class="letter accent-letter">ـﺤُـ</span>
-
-    <span class="letter accent-letter">ـحَ</span>
-    <span class="letter accent-letter">ـحِ</span>
-    <span class="letter accent-letter">ـحُ</span>
-  </div>
-
-  <!-- KHA -->
   <div class="row">
-    <span class="arrow">▾</span>
-    <span class="letter" data-audio="audio/kha.mp3" data-name="خاء">خ</span>
-    <span class="letter" data-audio="audio/kha.mp3" data-name="خاء">ﺧـ</span>
-    <span class="letter" data-audio="audio/kha.mp3" data-name="خاء">ـﺨـ</span>
-    <span class="letter" data-audio="audio/kha.mp3" data-name="خاء">ـخ</span>
+    <span class="letter" data-audio="audio/kha.mp3" data-name="خاء">خ خخخ</span>
   </div>
-  <div class="hidden-row">
-    <span class="letter accent-letter">خَ</span>
-    <span class="letter accent-letter">خِ</span>
-    <span class="letter accent-letter">خُ</span>
-
-    <span class="letter accent-letter">ﺧَـ</span>
-    <span class="letter accent-letter">ﺧِـ</span>
-    <span class="letter accent-letter">ﺧُـ</span>
-
-    <span class="letter accent-letter">ـﺨَـ</span>
-    <span class="letter accent-letter">ـﺨِـ</span>
-    <span class="letter accent-letter">ـﺨُـ</span>
-
-    <span class="letter accent-letter">ـخَ</span>
-    <span class="letter accent-letter">ـخِ</span>
-    <span class="letter accent-letter">ـخُ</span>
-  </div>
-
-  <!-- DAL -->
   <div class="row">
-    <span class="arrow">▾</span>
-    <span class="letter" data-audio="audio/dal.mp3" data-name="دال">د</span>
-    <span class="letter" data-audio="audio/dal.mp3" data-name="دال">د</span>
-    <span class="letter" data-audio="audio/dal.mp3" data-name="دال">ـد</span>
-    <span class="letter" data-audio="audio/dal.mp3" data-name="دال">ـد</span>
+    <span class="letter" data-audio="audio/dal.mp3" data-name="دال">د د ـد ـد</span>
   </div>
-  <div class="hidden-row">
-    <span class="letter accent-letter">دَ</span>
-    <span class="letter accent-letter">دِ</span>
-    <span class="letter accent-letter">دُ</span>
-
-    <span class="letter accent-letter">دَ</span>
-    <span class="letter accent-letter">دِ</span>
-    <span class="letter accent-letter">دُ</span>
-
-    <span class="letter accent-letter">ـدَ</span>
-    <span class="letter accent-letter">ـدِ</span>
-    <span class="letter accent-letter">ـدُ</span>
-
-    <span class="letter accent-letter">ـدَ</span>
-    <span class="letter accent-letter">ـدِ</span>
-    <span class="letter accent-letter">ـدُ</span>
-  </div>
-
-  <!-- DHAL -->
   <div class="row">
-    <span class="arrow">▾</span>
-    <span class="letter" data-audio="audio/dhal.mp3" data-name="ذال">ذ</span>
-    <span class="letter" data-audio="audio/dhal.mp3" data-name="ذال">ذ</span>
-    <span class="letter" data-audio="audio/dhal.mp3" data-name="ذال">ـذ</span>
-    <span class="letter" data-audio="audio/dhal.mp3" data-name="ذال">ـذ</span>
+    <span class="letter" data-audio="audio/dhal.mp3" data-name="ذال">ذ ذ ـذ ـذ</span>
   </div>
-  <div class="hidden-row">
-    <span class="letter accent-letter">ذَ</span>
-    <span class="letter accent-letter">ذِ</span>
-    <span class="letter accent-letter">ذُ</span>
-
-    <span class="letter accent-letter">ذَ</span>
-    <span class="letter accent-letter">ذِ</span>
-    <span class="letter accent-letter">ذُ</span>
-
-    <span class="letter accent-letter">ـذَ</span>
-    <span class="letter accent-letter">ـذِ</span>
-    <span class="letter accent-letter">ـذُ</span>
-
-    <span class="letter accent-letter">ـذَ</span>
-    <span class="letter accent-letter">ـذِ</span>
-    <span class="letter accent-letter">ـذُ</span>
-  </div>
-
-  <!-- RA -->
   <div class="row">
-    <span class="arrow">▾</span>
-    <span class="letter" data-audio="audio/ra.mp3" data-name="راء">ر</span>
-    <span class="letter" data-audio="audio/ra.mp3" data-name="راء">ر</span>
-    <span class="letter" data-audio="audio/ra.mp3" data-name="راء">ـر</span>
-    <span class="letter" data-audio="audio/ra.mp3" data-name="راء">ـر</span>
+    <span class="letter" data-audio="audio/ra.mp3" data-name="راء">ر ر ـر ـر</span>
   </div>
-  <div class="hidden-row">
-    <span class="letter accent-letter">رَ</span>
-    <span class="letter accent-letter">رِ</span>
-    <span class="letter accent-letter">رُ</span>
-
-    <span class="letter accent-letter">رَ</span>
-    <span class="letter accent-letter">رِ</span>
-    <span class="letter accent-letter">رُ</span>
-
-    <span class="letter accent-letter">ـرَ</span>
-    <span class="letter accent-letter">ـرِ</span>
-    <span class="letter accent-letter">ـرُ</span>
-
-    <span class="letter accent-letter">ـرَ</span>
-    <span class="letter accent-letter">ـرِ</span>
-    <span class="letter accent-letter">ـرُ</span>
-  </div>
-
-  <!-- ZAY -->
   <div class="row">
-    <span class="arrow">▾</span>
-    <span class="letter" data-audio="audio/zay.mp3" data-name="زاي">ز</span>
-    <span class="letter" data-audio="audio/zay.mp3" data-name="زاي">ز</span>
-    <span class="letter" data-audio="audio/zay.mp3" data-name="زاي">ـز</span>
-    <span class="letter" data-audio="audio/zay.mp3" data-name="زاي">ـز</span>
+    <span class="letter" data-audio="audio/zay.mp3" data-name="زاي">زز ـز ـز</span>
   </div>
-  <div class="hidden-row">
-    <span class="letter accent-letter">زَ</span>
-    <span class="letter accent-letter">زِ</span>
-    <span class="letter accent-letter">زُ</span>
-
-    <span class="letter accent-letter">زَ</span>
-    <span class="letter accent-letter">زِ</span>
-    <span class="letter accent-letter">زُ</span>
-
-    <span class="letter accent-letter">ـزَ</span>
-    <span class="letter accent-letter">ـزِ</span>
-    <span class="letter accent-letter">ـزُ</span>
-
-    <span class="letter accent-letter">ـزَ</span>
-    <span class="letter accent-letter">ـزِ</span>
-    <span class="letter accent-letter">ـزُ</span>
-  </div>
-
-  <!-- SIN -->
   <div class="row">
-    <span class="arrow">▾</span>
-    <span class="letter" data-audio="audio/sin.mp3" data-name="سين">س</span>
-    <span class="letter" data-audio="audio/sin.mp3" data-name="سين">ﺳـ</span>
-    <span class="letter" data-audio="audio/sin.mp3" data-name="سين">ـﺴـ</span>
-    <span class="letter" data-audio="audio/sin.mp3" data-name="سين">ـس</span>
+    <span class="letter" data-audio="audio/sin.mp3" data-name="سين">س سسس</span>
   </div>
-  <div class="hidden-row">
-    <span class="letter accent-letter">سَ</span>
-    <span class="letter accent-letter">سِ</span>
-    <span class="letter accent-letter">سُ</span>
-
-    <span class="letter accent-letter">ﺳَـ</span>
-    <span class="letter accent-letter">ﺳِـ</span>
-    <span class="letter accent-letter">ﺳُـ</span>
-
-    <span class="letter accent-letter">ـﺴَـ</span>
-    <span class="letter accent-letter">ـﺴِـ</span>
-    <span class="letter accent-letter">ـﺴُـ</span>
-
-    <span class="letter accent-letter">ـسَ</span>
-    <span class="letter accent-letter">ـسِ</span>
-    <span class="letter accent-letter">ـسُ</span>
-  </div>
-
-  <!-- SHIN -->
   <div class="row">
-    <span class="arrow">▾</span>
-    <span class="letter" data-audio="audio/shin.mp3" data-name="شين">ش</span>
-    <span class="letter" data-audio="audio/shin.mp3" data-name="شين">ﺷـ</span>
-    <span class="letter" data-audio="audio/shin.mp3" data-name="شين">ـﺸـ</span>
-    <span class="letter" data-audio="audio/shin.mp3" data-name="شين">ـش</span>
+    <span class="letter" data-audio="audio/shin.mp3" data-name="شين">ش ششش</span>
   </div>
-  <div class="hidden-row">
-    <span class="letter accent-letter">شَ</span>
-    <span class="letter accent-letter">شِ</span>
-    <span class="letter accent-letter">شُ</span>
-
-    <span class="letter accent-letter">ﺷَـ</span>
-    <span class="letter accent-letter">ﺷِـ</span>
-    <span class="letter accent-letter">ﺷُـ</span>
-
-    <span class="letter accent-letter">ـﺸَـ</span>
-    <span class="letter accent-letter">ـﺸِـ</span>
-    <span class="letter accent-letter">ـﺸُـ</span>
-
-    <span class="letter accent-letter">ـشَ</span>
-    <span class="letter accent-letter">ـشِ</span>
-    <span class="letter accent-letter">ـشُ</span>
-  </div>
-
-  <!-- SAD -->
   <div class="row">
-    <span class="arrow">▾</span>
-    <span class="letter" data-audio="audio/sad.mp3" data-name="صاد">ص</span>
-    <span class="letter" data-audio="audio/sad.mp3" data-name="صاد">ﺻـ</span>
-    <span class="letter" data-audio="audio/sad.mp3" data-name="صاد">ـﺼـ</span>
-    <span class="letter" data-audio="audio/sad.mp3" data-name="صاد">ـص</span>
+    <span class="letter" data-audio="audio/sad.mp3" data-name="صاد">ص صصص</span>
   </div>
-  <div class="hidden-row">
-    <span class="letter accent-letter">صَ</span>
-    <span class="letter accent-letter">صِ</span>
-    <span class="letter accent-letter">صُ</span>
-
-    <span class="letter accent-letter">ﺻَـ</span>
-    <span class="letter accent-letter">ﺻِـ</span>
-    <span class="letter accent-letter">ﺻُـ</span>
-
-    <span class="letter accent-letter">ـﺼَـ</span>
-    <span class="letter accent-letter">ـﺼِـ</span>
-    <span class="letter accent-letter">ـﺼُـ</span>
-
-    <span class="letter accent-letter">ـصَ</span>
-    <span class="letter accent-letter">ـصِ</span>
-    <span class="letter accent-letter">ـصُ</span>
-  </div>
-
-  <!-- DAD -->
   <div class="row">
-    <span class="arrow">▾</span>
-    <span class="letter" data-audio="audio/dad.mp3" data-name="ضاد">ض</span>
-    <span class="letter" data-audio="audio/dad.mp3" data-name="ضاد">ﺿـ</span>
-    <span class="letter" data-audio="audio/dad.mp3" data-name="ضاد">ـﻀـ</span>
-    <span class="letter" data-audio="audio/dad.mp3" data-name="ضاد">ـض</span>
+    <span class="letter" data-audio="audio/dad.mp3" data-name="ضاد">ض ضضض</span>
   </div>
-  <div class="hidden-row">
-    <span class="letter accent-letter">ضَ</span>
-    <span class="letter accent-letter">ضِ</span>
-    <span class="letter accent-letter">ضُ</span>
-
-    <span class="letter accent-letter">ﺿَـ</span>
-    <span class="letter accent-letter">ﺿِـ</span>
-    <span class="letter accent-letter">ﺿُـ</span>
-
-    <span class="letter accent-letter">ـﻀَـ</span>
-    <span class="letter accent-letter">ـﻀِـ</span>
-    <span class="letter accent-letter">ـﻀُـ</span>
-
-    <span class="letter accent-letter">ـضَ</span>
-    <span class="letter accent-letter">ـضِ</span>
-    <span class="letter accent-letter">ـضُ</span>
-  </div>
-
-  <!-- TTA -->
   <div class="row">
-    <span class="arrow">▾</span>
-    <span class="letter" data-audio="audio/tta.mp3" data-name="طاء">ط</span>
-    <span class="letter" data-audio="audio/tta.mp3" data-name="طاء">ﻃـ</span>
-    <span class="letter" data-audio="audio/tta.mp3" data-name="طاء">ـﻄـ</span>
-    <span class="letter" data-audio="audio/tta.mp3" data-name="طاء">ـط</span>
+    <span class="letter" data-audio="audio/tta.mp3" data-name="طاء">ط ططط</span>
   </div>
-  <div class="hidden-row">
-    <span class="letter accent-letter">طَ</span>
-    <span class="letter accent-letter">طِ</span>
-    <span class="letter accent-letter">طُ</span>
-
-    <span class="letter accent-letter">ﻃَـ</span>
-    <span class="letter accent-letter">ﻃِـ</span>
-    <span class="letter accent-letter">ﻃُـ</span>
-
-    <span class="letter accent-letter">ـﻄَـ</span>
-    <span class="letter accent-letter">ـﻄِـ</span>
-    <span class="letter accent-letter">ـﻄُـ</span>
-
-    <span class="letter accent-letter">ـطَ</span>
-    <span class="letter accent-letter">ـطِ</span>
-    <span class="letter accent-letter">ـطُ</span>
-  </div>
-
-  <!-- DHA -->
   <div class="row">
-    <span class="arrow">▾</span>
-    <span class="letter" data-audio="audio/dha.mp3" data-name="ظاء">ظ</span>
-    <span class="letter" data-audio="audio/dha.mp3" data-name="ظاء">ﻇـ</span>
-    <span class="letter" data-audio="audio/dha.mp3" data-name="ظاء">ـﻈـ</span>
-    <span class="letter" data-audio="audio/dha.mp3" data-name="ظاء">ـظ</span>
+    <span class="letter" data-audio="audio/dha.mp3" data-name="ظاء">ظ ظظظ</span>
   </div>
-  <div class="hidden-row">
-    <span class="letter accent-letter">ظَ</span>
-    <span class="letter accent-letter">ظِ</span>
-    <span class="letter accent-letter">ظُ</span>
-
-    <span class="letter accent-letter">ﻇَـ</span>
-    <span class="letter accent-letter">ﻇِـ</span>
-    <span class="letter accent-letter">ﻇُـ</span>
-
-    <span class="letter accent-letter">ـﻈَـ</span>
-    <span class="letter accent-letter">ـﻈِـ</span>
-    <span class="letter accent-letter">ـﻈُـ</span>
-
-    <span class="letter accent-letter">ـظَ</span>
-    <span class="letter accent-letter">ـظِ</span>
-    <span class="letter accent-letter">ـظُ</span>
-  </div>
-
-  <!-- AIN -->
   <div class="row">
-    <span class="arrow">▾</span>
-    <span class="letter" data-audio="audio/ain.mp3" data-name="عين">ع</span>
-    <span class="letter" data-audio="audio/ain.mp3" data-name="عين">ﻋـ</span>
-    <span class="letter" data-audio="audio/ain.mp3" data-name="عين">ـﻌـ</span>
-    <span class="letter" data-audio="audio/ain.mp3" data-name="عين">ـع</span>
+    <span class="letter" data-audio="audio/ain.mp3" data-name="عين">ع ععع</span>
   </div>
-  <div class="hidden-row">
-    <span class="letter accent-letter">عَ</span>
-    <span class="letter accent-letter">عِ</span>
-    <span class="letter accent-letter">عُ</span>
-
-    <span class="letter accent-letter">ﻋَـ</span>
-    <span class="letter accent-letter">ﻋِـ</span>
-    <span class="letter accent-letter">ﻋُـ</span>
-
-    <span class="letter accent-letter">ـﻌَـ</span>
-    <span class="letter accent-letter">ـﻌِـ</span>
-    <span class="letter accent-letter">ـﻌُـ</span>
-
-    <span class="letter accent-letter">ـعَ</span>
-    <span class="letter accent-letter">ـعِ</span>
-    <span class="letter accent-letter">ـعُ</span>
-  </div>
-
-  <!-- GHAYN -->
   <div class="row">
-    <span class="arrow">▾</span>
-    <span class="letter" data-audio="audio/ghayn.mp3" data-name="غين">غ</span>
-    <span class="letter" data-audio="audio/ghayn.mp3" data-name="غين">ﻏـ</span>
-    <span class="letter" data-audio="audio/ghayn.mp3" data-name="غين">ـﻐـ</span>
-    <span class="letter" data-audio="audio/ghayn.mp3" data-name="غين">ـغ</span>
+    <span class="letter" data-audio="audio/ghayn.mp3" data-name="غين">غ غغغ</span>
   </div>
-  <div class="hidden-row">
-    <span class="letter accent-letter">غَ</span>
-    <span class="letter accent-letter">غِ</span>
-    <span class="letter accent-letter">غُ</span>
-
-    <span class="letter accent-letter">ﻏَـ</span>
-    <span class="letter accent-letter">ﻏِـ</span>
-    <span class="letter accent-letter">ﻏُـ</span>
-
-    <span class="letter accent-letter">ـﻐَـ</span>
-    <span class="letter accent-letter">ـﻐِـ</span>
-    <span class="letter accent-letter">ـﻐُـ</span>
-
-    <span class="letter accent-letter">ـغَ</span>
-    <span class="letter accent-letter">ـغِ</span>
-    <span class="letter accent-letter">ـغُ</span>
-  </div>
-
-  <!-- FA -->
   <div class="row">
-    <span class="arrow">▾</span>
-    <span class="letter" data-audio="audio/fa.mp3" data-name="فاء">ف</span>
-    <span class="letter" data-audio="audio/fa.mp3" data-name="فاء">ﻓـ</span>
-    <span class="letter" data-audio="audio/fa.mp3" data-name="فاء">ـﻔـ</span>
-    <span class="letter" data-audio="audio/fa.mp3" data-name="فاء">ـف</span>
+    <span class="letter" data-audio="audio/fa.mp3" data-name="فاء">ف ففف</span>
   </div>
-  <div class="hidden-row">
-    <span class="letter accent-letter">فَ</span>
-    <span class="letter accent-letter">فِ</span>
-    <span class="letter accent-letter">فُ</span>
-
-    <span class="letter accent-letter">ﻓَـ</span>
-    <span class="letter accent-letter">ﻓِـ</span>
-    <span class="letter accent-letter">ﻓُـ</span>
-
-    <span class="letter accent-letter">ـﻔَـ</span>
-    <span class="letter accent-letter">ـﻔِـ</span>
-    <span class="letter accent-letter">ـﻔُـ</span>
-
-    <span class="letter accent-letter">ـفَ</span>
-    <span class="letter accent-letter">ـفِ</span>
-    <span class="letter accent-letter">ـفُ</span>
-  </div>
-
-  <!-- QAF -->
   <div class="row">
-    <span class="arrow">▾</span>
-    <span class="letter" data-audio="audio/qaf.mp3" data-name="قاف">ق</span>
-    <span class="letter" data-audio="audio/qaf.mp3" data-name="قاف">ﻗـ</span>
-    <span class="letter" data-audio="audio/qaf.mp3" data-name="قاف">ـﻘـ</span>
-    <span class="letter" data-audio="audio/qaf.mp3" data-name="قاف">ـق</span>
+    <span class="letter" data-audio="audio/qaf.mp3" data-name="قاف">ق ققق</span>
   </div>
-  <div class="hidden-row">
-    <span class="letter accent-letter">قَ</span>
-    <span class="letter accent-letter">قِ</span>
-    <span class="letter accent-letter">قُ</span>
-
-    <span class="letter accent-letter">ﻗَـ</span>
-    <span class="letter accent-letter">ﻗِـ</span>
-    <span class="letter accent-letter">ﻗُـ</span>
-
-    <span class="letter accent-letter">ـﻘَـ</span>
-    <span class="letter accent-letter">ـﻘِـ</span>
-    <span class="letter accent-letter">ـﻘُـ</span>
-
-    <span class="letter accent-letter">ـقَ</span>
-    <span class="letter accent-letter">ـقِ</span>
-    <span class="letter accent-letter">ـقُ</span>
-  </div>
-
-  <!-- KAF -->
   <div class="row">
-    <span class="arrow">▾</span>
-    <span class="letter" data-audio="audio/kaf.mp3" data-name="كاف">ك</span>
-    <span class="letter" data-audio="audio/kaf.mp3" data-name="كاف">ﻛـ</span>
-    <span class="letter" data-audio="audio/kaf.mp3" data-name="كاف">ـﻜـ</span>
-    <span class="letter" data-audio="audio/kaf.mp3" data-name="كاف">ـك</span>
+    <span class="letter" data-audio="audio/kaf.mp3" data-name="كاف">ك ككك</span>
   </div>
-  <div class="hidden-row">
-    <span class="letter accent-letter">كَ</span>
-    <span class="letter accent-letter">كِ</span>
-    <span class="letter accent-letter">كُ</span>
-
-    <span class="letter accent-letter">ﻛَـ</span>
-    <span class="letter accent-letter">ﻛِـ</span>
-    <span class="letter accent-letter">ﻛُـ</span>
-
-    <span class="letter accent-letter">ـﻜَـ</span>
-    <span class="letter accent-letter">ـﻜِـ</span>
-    <span class="letter accent-letter">ـﻜُـ</span>
-
-    <span class="letter accent-letter">ـكَ</span>
-    <span class="letter accent-letter">ـكِ</span>
-    <span class="letter accent-letter">ـكُ</span>
-  </div>
-
-  <!-- LAM -->
   <div class="row">
-    <span class="arrow">▾</span>
-    <span class="letter" data-audio="audio/lam.mp3" data-name="لام">ل</span>
-    <span class="letter" data-audio="audio/lam.mp3" data-name="لام">ﻟـ</span>
-    <span class="letter" data-audio="audio/lam.mp3" data-name="لام">ـﻠـ</span>
-    <span class="letter" data-audio="audio/lam.mp3" data-name="لام">ـل</span>
+    <span class="letter" data-audio="audio/lam.mp3" data-name="لام">ل للل</span>
   </div>
-  <div class="hidden-row">
-    <span class="letter accent-letter">لَ</span>
-    <span class="letter accent-letter">لِ</span>
-    <span class="letter accent-letter">لُ</span>
-
-    <span class="letter accent-letter">ﻟَـ</span>
-    <span class="letter accent-letter">ﻟِـ</span>
-    <span class="letter accent-letter">ﻟُـ</span>
-
-    <span class="letter accent-letter">ـﻠَـ</span>
-    <span class="letter accent-letter">ـﻠِـ</span>
-    <span class="letter accent-letter">ـﻠُـ</span>
-
-    <span class="letter accent-letter">ـلَ</span>
-    <span class="letter accent-letter">ـلِ</span>
-    <span class="letter accent-letter">ـلُ</span>
-  </div>
-
-  <!-- MIM -->
   <div class="row">
-    <span class="arrow">▾</span>
-    <span class="letter" data-audio="audio/mim.mp3" data-name="ميم">م</span>
-    <span class="letter" data-audio="audio/mim.mp3" data-name="ميم">ﻣـ</span>
-    <span class="letter" data-audio="audio/mim.mp3" data-name="ميم">ـﻤـ</span>
-    <span class="letter" data-audio="audio/mim.mp3" data-name="ميم">ـم</span>
+    <span class="letter" data-audio="audio/mim.mp3" data-name="ميم">م ممم</span>
   </div>
-  <div class="hidden-row">
-    <span class="letter accent-letter">مَ</span>
-    <span class="letter accent-letter">مِ</span>
-    <span class="letter accent-letter">مُ</span>
-
-    <span class="letter accent-letter">ﻣَـ</span>
-    <span class="letter accent-letter">ﻣِـ</span>
-    <span class="letter accent-letter">ﻣُـ</span>
-
-    <span class="letter accent-letter">ـﻤَـ</span>
-    <span class="letter accent-letter">ـﻤِـ</span>
-    <span class="letter accent-letter">ـﻤُـ</span>
-
-    <span class="letter accent-letter">ـمَ</span>
-    <span class="letter accent-letter">ـمِ</span>
-    <span class="letter accent-letter">ـمُ</span>
-  </div>
-
-  <!-- NUN -->
   <div class="row">
-    <span class="arrow">▾</span>
-    <span class="letter" data-audio="audio/nun.mp3" data-name="نون">ن</span>
-    <span class="letter" data-audio="audio/nun.mp3" data-name="نون">ﻧـ</span>
-    <span class="letter" data-audio="audio/nun.mp3" data-name="نون">ـﻨـ</span>
-    <span class="letter" data-audio="audio/nun.mp3" data-name="نون">ـن</span>
+    <span class="letter" data-audio="audio/nun.mp3" data-name="نون">ن ننن</span>
   </div>
-  <div class="hidden-row">
-    <span class="letter accent-letter">نَ</span>
-    <span class="letter accent-letter">نِ</span>
-    <span class="letter accent-letter">نُ</span>
-
-    <span class="letter accent-letter">ﻧَـ</span>
-    <span class="letter accent-letter">ﻧِـ</span>
-    <span class="letter accent-letter">ﻧُـ</span>
-
-    <span class="letter accent-letter">ـﻨَـ</span>
-    <span class="letter accent-letter">ـﻨِـ</span>
-    <span class="letter accent-letter">ـﻨُـ</span>
-
-    <span class="letter accent-letter">ـنَ</span>
-    <span class="letter accent-letter">ـنِ</span>
-    <span class="letter accent-letter">ـنُ</span>
-  </div>
-
-  <!-- HAA -->
   <div class="row">
-    <span class="arrow">▾</span>
-    <span class="letter" data-audio="audio/haa.mp3" data-name="هاء">ه</span>
-    <span class="letter" data-audio="audio/haa.mp3" data-name="هاء">ﻫـ</span>
-    <span class="letter" data-audio="audio/haa.mp3" data-name="هاء">ـﻬـ</span>
-    <span class="letter" data-audio="audio/haa.mp3" data-name="هاء">ـه</span>
+    <span class="letter" data-audio="audio/haa.mp3" data-name="هاء">ه ههه</span>
   </div>
-  <div class="hidden-row">
-    <span class="letter accent-letter">هَ</span>
-    <span class="letter accent-letter">هِ</span>
-    <span class="letter accent-letter">هُ</span>
-
-    <span class="letter accent-letter">ﻫَـ</span>
-    <span class="letter accent-letter">ﻫِـ</span>
-    <span class="letter accent-letter">ﻫُـ</span>
-
-    <span class="letter accent-letter">ـﻬَـ</span>
-    <span class="letter accent-letter">ـﻬِـ</span>
-    <span class="letter accent-letter">ـﻬُـ</span>
-
-    <span class="letter accent-letter">ـهَ</span>
-    <span class="letter accent-letter">ـهِ</span>
-    <span class="letter accent-letter">ـهُ</span>
-  </div>
-
-  <!-- WAW -->
   <div class="row">
-    <span class="arrow">▾</span>
-    <span class="letter" data-audio="audio/waw.mp3" data-name="واو">و</span>
-    <span class="letter" data-audio="audio/waw.mp3" data-name="واو">و</span>
-    <span class="letter" data-audio="audio/waw.mp3" data-name="واو">ـو</span>
-    <span class="letter" data-audio="audio/waw.mp3" data-name="واو">ـو</span>
+    <span class="letter" data-audio="audio/waw.mp3" data-name="واو">و و ـو ـو</span>
   </div>
-  <div class="hidden-row">
-    <span class="letter accent-letter">وَ</span>
-    <span class="letter accent-letter">وِ</span>
-    <span class="letter accent-letter">وُ</span>
-
-    <span class="letter accent-letter">وَ</span>
-    <span class="letter accent-letter">وِ</span>
-    <span class="letter accent-letter">وُ</span>
-
-    <span class="letter accent-letter">ـوَ</span>
-    <span class="letter accent-letter">ـوِ</span>
-    <span class="letter accent-letter">ـوُ</span>
-
-    <span class="letter accent-letter">ـوَ</span>
-    <span class="letter accent-letter">ـوِ</span>
-    <span class="letter accent-letter">ـوُ</span>
-  </div>
-
-  <!-- YA -->
   <div class="row">
-    <span class="arrow">▾</span>
-    <span class="letter" data-audio="audio/ya.mp3" data-name="ياء">ي</span>
-    <span class="letter" data-audio="audio/ya.mp3" data-name="ياء">ﻳـ</span>
-    <span class="letter" data-audio="audio/ya.mp3" data-name="ياء">ـﻴـ</span>
-    <span class="letter" data-audio="audio/ya.mp3" data-name="ياء">ـي</span>
+    <span class="letter" data-audio="audio/ya.mp3" data-name="ياء">ي ييي</span>
   </div>
-  <div class="hidden-row">
-    <span class="letter accent-letter">يَ</span>
-    <span class="letter accent-letter">يِ</span>
-    <span class="letter accent-letter">يُ</span>
-
-    <span class="letter accent-letter">ﻳَـ</span>
-    <span class="letter accent-letter">ﻳِـ</span>
-    <span class="letter accent-letter">ﻳُـ</span>
-
-    <span class="letter accent-letter">ـﻴَـ</span>
-    <span class="letter accent-letter">ـﻴِـ</span>
-    <span class="letter accent-letter">ـﻴُـ</span>
-
-    <span class="letter accent-letter">ـيَ</span>
-    <span class="letter accent-letter">ـيِ</span>
-    <span class="letter accent-letter">ـيُ</span>
-  </div>
-
-  <!-- Alif Maqsura -->
   <div class="row">
- <span class="arrow">▾</span>
-       <span class="letter" data-audio="audio/alif.mp3" data-name="أليف ماكسورا">ى</span>
- <span class="letter"></span>  <span class="letter"></span> 
-    <span class="letter" data-audio="audio/alif.mp3" data-name="أليف ماكسورا">ـى</span>
+    <span class="letter" data-audio="audio/alif.mp3" data-name="أليف ماكسورا">ى    ـى</span>
   </div>
-  <!-- Ta' Marbuta -->
   <div class="row">
- <span class="arrow">▾</span>
-       <span class="letter" data-audio="audio/tamarbuta.mp3" data-name="تَاءْ مَرْبُوطَة">ة</span>
- <span class="letter"></span>  <span class="letter"></span> 
-    <span class="letter" data-audio="audio/tamarbuta.mp3" data-name="تَاءْ مَرْبُوطَة">ـة</span>
+    <span class="letter" data-audio="audio/tamarbuta.mp3" data-name="تَاءْ مَرْبُوطَة">ة    ـة</span>
   </div>
+</div>
 
-</div> <!-- End of .table -->
+ <!-- End of .table -->
 
 <!-- Hidden audio element for letter audios -->
 <audio id="audio-player"></audio>
@@ -996,15 +337,6 @@
         player.src = audioSrc;
         player.play();
       }
-    });
-  });
-
-  // 4) Expand/Collapse accent rows
-  document.querySelectorAll('.arrow').forEach((arrow, index) => {
-    arrow.addEventListener('click', () => {
-      const hiddenRow = document.querySelectorAll('.hidden-row')[index];
-      hiddenRow.style.display = (hiddenRow.style.display === 'flex') ? 'none' : 'flex';
-      arrow.classList.toggle('expanded');
     });
   });
 </script>
