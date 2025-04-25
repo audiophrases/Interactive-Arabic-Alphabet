@@ -76,20 +76,21 @@
       font-size: 1.8em;
     }
     /* Tooltip using title attribute */
-    .letter-forms[title]:hover::after {
-      content: attr(title);
-      position: absolute;
-      bottom: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #333;
-      color: #fff;
-      font-size: 0.8rem;
-      padding: 3px 6px;
-      border-radius: 4px;
-      white-space: nowrap;
-      pointer-events: none;
-    }
+    .letter-forms[data-title]:hover::after {
+  content: attr(data-title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 3px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
   </style>
 </head>
 
@@ -111,33 +112,33 @@
   <!-- 1 DOT -->
   <div class="group" style="background-color: #d9f2d9;">
      <!-- Ba: ب ببب -->
-     <span class="letter-forms" title="Ba" onclick="playSound('ba')">
+     <span class="letter-forms" data-title="Ba" onclick="playSound('ba')">
       ب ببب
     </span>
-    <span class="letter-forms" title="Dhal" onclick="playSound('dhal')">
+    <span class="letter-forms" data-title="Dhal" onclick="playSound('dhal')">
       ذ ذ ـذ ـذ
     </span><br>
     <!-- Nun: ن ننن -->
-    <span class="letter-forms" title="Nun" onclick="playSound('nun')">
+    <span class="letter-forms" data-title="Nun" onclick="playSound('nun')">
       ن ننن
     </span>
     <!-- Fa: ف ففف -->
-    <span class="letter-forms" title="Fa" onclick="playSound('fa')">
+    <span class="letter-forms" data-title="Fa" onclick="playSound('fa')">
       ف ففف
     </span><br>
-    <span class="letter-forms" title="Dad" onclick="playSound('dad')">
+    <span class="letter-forms" data-title="Dad" onclick="playSound('dad')">
       ض ضضض
     </span>
     <!-- Ghayn: غ غغغ -->
-    <span class="letter-forms" title="Ghayn" onclick="playSound('ghayn')">
+    <span class="letter-forms" data-title="Ghayn" onclick="playSound('ghayn')">
       غ غغغ
     </span><br>
     <!-- Kha: خ خخخ -->
-    <span class="letter-forms" title="Kha" onclick="playSound('kha')">
+    <span class="letter-forms" data-title="Kha" onclick="playSound('kha')">
       خ خخخ
     </span>
 
-    <span class="letter-forms" title="Zah" onclick="playSound('zay')">
+    <span class="letter-forms" data-title="Zah" onclick="playSound('zay')">
       ظ ظظظ
     </span>
 
@@ -147,15 +148,15 @@
   <!-- 2 DOTS -->
   <div class="group" style="background-color: #ffe6e6;">
     <!-- Ya: ي ييي -->
-    <span class="letter-forms" title="Ya" onclick="playSound('ya')">
+    <span class="letter-forms" data-title="Ya" onclick="playSound('ya')">
       ي ييي
     </span><br>
     <!-- Ta: ت تتت -->
-    <span class="letter-forms" title="Ta" onclick="playSound('ta')">
+    <span class="letter-forms" data-title="Ta" onclick="playSound('ta')">
       ت تتت
     </span><br>
     <!-- Qaf: ق ققق -->
-    <span class="letter-forms" title="Qaf" onclick="playSound('qaf')">
+    <span class="letter-forms" data-title="Qaf" onclick="playSound('qaf')">
       ق ققق
     </span>
   </div>
@@ -163,11 +164,11 @@
   <!-- 3 DOTS -->
   <div class="group" style="background-color: #ffe6ff;">
     <!-- Tha: ث ثثث -->
-    <span class="letter-forms" title="Tha" onclick="playSound('tha')">
+    <span class="letter-forms" data-title="Tha" onclick="playSound('tha')">
       ث ثثث
     </span><br>
     <!-- Shin: ش شـ ـشـ ـش -->
-    <span class="letter-forms" title="Shin" onclick="playSound('shin')">
+    <span class="letter-forms" data-title="Shin" onclick="playSound('shin')">
       ش ششش
     </span>
   </div>
@@ -181,13 +182,13 @@
 
   <!-- Group 3: (Alif first), then Lam, Kaf -->
   <div class="group" style="background-color: #d9f2d9;">
-    <span class="letter-forms" title="Alif" onclick="playSound('alif')">
+    <span class="letter-forms" data-title="Alif" onclick="playSound('alif')">
       ا ا ـا ـا
     </span><br>
-    <span class="letter-forms" title="Lam" onclick="playSound('lam')">
+    <span class="letter-forms" data-title="Lam" onclick="playSound('lam')">
       ل للل
     </span><br>
-    <span class="letter-forms" title="Kaf" onclick="playSound('kaf')">
+    <span class="letter-forms" data-title="Kaf" onclick="playSound('kaf')">
       ك ككك
     </span>
   </div>
@@ -195,22 +196,22 @@
   <!-- Another group for Jim, Hha, Kha -->
 <div class="group" style="background-color: #e6ccff;">
 
-    <span class="letter-forms" title="Jim" onclick="playSound('jeem')">
+    <span class="letter-forms" data-title="Jim" onclick="playSound('jeem')">
       ج ججج
     </span><br>
-    <span class="letter-forms" title="Hha" onclick="playSound('haa')">
+    <span class="letter-forms" data-title="Hha" onclick="playSound('haa')">
       ح ححح
     </span><br>
-    <span class="letter-forms" title="Kha" onclick="playSound('kha')">
+    <span class="letter-forms" data-title="Kha" onclick="playSound('kha')">
       خ خخخ
     </span>
   </div>
  <!-- Another group for, Sin, Shin -->
   <div class="group" style="background-color: #ffffe6;">
-    <span class="letter-forms" title="Sin" onclick="playSound('sin')">
+    <span class="letter-forms" data-title="Sin" onclick="playSound('sin')">
       س سسس
     </span><br>
-    <span class="letter-forms" title="Shin" onclick="playSound('shin')">
+    <span class="letter-forms" data-title="Shin" onclick="playSound('shin')">
       ش ششش
     </span>
  </div>
@@ -219,10 +220,10 @@
 
   <!-- New group for Sad & Dad alone -->
   <div class="group" style="background-color: #ffccf2;">
-    <span class="letter-forms" title="Sad" onclick="playSound('sad')">
+    <span class="letter-forms" data-title="Sad" onclick="playSound('sad')">
       ص صصص
     </span><br>
-    <span class="letter-forms" title="Dad" onclick="playSound('dad')">
+    <span class="letter-forms" data-title="Dad" onclick="playSound('dad')">
       ض ضضض
     </span>
   </div>
@@ -230,20 +231,20 @@
 
  <!-- Another group for, Sin, Shin, Tah, Zah, Ayn, Ghayn -->
   <div class="group" style="background-color: #e6ffff;">
-    <span class="letter-forms" title="Tah" onclick="playSound('tta')">
+    <span class="letter-forms" data-title="Tah" onclick="playSound('tta')">
       ط ططط
     </span><br>
-    <span class="letter-forms" title="Zah" onclick="playSound('zay')">
+    <span class="letter-forms" data-title="Zah" onclick="playSound('zay')">
       ظ ظظظ
     </span>
  </div>
 
   <!-- Group 4: Ha (ه) with Mim -->
   <div class="group" style="background-color: #ffe6cc;">
-    <span class="letter-forms" title="Mim" onclick="playSound('mim')">
+    <span class="letter-forms" data-title="Mim" onclick="playSound('mim')">
       م ممم
     </span><br>
-    <span class="letter-forms" title="Ha" onclick="playSound('ha')">
+    <span class="letter-forms" data-title="Ha" onclick="playSound('ha')">
       ه ههه
     </span>
   </div>
@@ -255,54 +256,54 @@
 <!-- Group 1: (Ya, Nun, Tha, Ta, Ba) -->
   <div class="group" style="background-color: #ffe6ff;">
 
-    <span class="letter-forms" title="Ba" onclick="playSound('ba')">
+    <span class="letter-forms" data-title="Ba" onclick="playSound('ba')">
       ب ببب
     </span><br>
-    <span class="letter-forms" title="Ta" onclick="playSound('ta')">
+    <span class="letter-forms" data-title="Ta" onclick="playSound('ta')">
       ت تتت
     </span><br>
-    <span class="letter-forms" title="Tha" onclick="playSound('tha')">
+    <span class="letter-forms" data-title="Tha" onclick="playSound('tha')">
       ث ثثث
     </span><br>
-    <span class="letter-forms" title="Nun" onclick="playSound('nun')">
+    <span class="letter-forms" data-title="Nun" onclick="playSound('nun')">
       ن ننن
     </span><br>
-    <span class="letter-forms" title="Ya" onclick="playSound('ya')">
+    <span class="letter-forms" data-title="Ya" onclick="playSound('ya')">
       ي ييي
     </span>
   </div>
 
  <!-- Another group for Dal, Dhal, Ra, Zay -->
   <div class="group" style="background-color: #ffe6e6;">
-    <span class="letter-forms" title="Dal" onclick="playSound('dal')">
+    <span class="letter-forms" data-title="Dal" onclick="playSound('dal')">
       د د ـد ـد
     </span><br>
-    <span class="letter-forms" title="Dhal" onclick="playSound('dhal')">
+    <span class="letter-forms" data-title="Dhal" onclick="playSound('dhal')">
       ذ ذ ـذ ـذ
     </span><br>
-    <span class="letter-forms" title="Ra" onclick="playSound('ra')">
+    <span class="letter-forms" data-title="Ra" onclick="playSound('ra')">
       ر ر ـر ـر
     </span><br>
-    <span class="letter-forms" title="Zay" onclick="playSound('zay')">
+    <span class="letter-forms" data-title="Zay" onclick="playSound('zay')">
       ز ز ـز ـز
     </span>
   </div>
 
   <!-- Group 2: (Fa, Qaf, Waw) -->
   <div class="group" style="background-color: #cce5e5;">
-    <span class="letter-forms" title="Ayn" onclick="playSound('ain')">
+    <span class="letter-forms" data-title="Ayn" onclick="playSound('ain')">
       ع ععع
     </span><br>
-    <span class="letter-forms" title="Ghayn" onclick="playSound('ghayn')">
+    <span class="letter-forms" data-title="Ghayn" onclick="playSound('ghayn')">
       غ غغغ
     </span><br>
-    <span class="letter-forms" title="Fa" onclick="playSound('fa')">
+    <span class="letter-forms" data-title="Fa" onclick="playSound('fa')">
       ف ففف
     </span><br>
-    <span class="letter-forms" title="Qaf" onclick="playSound('qaf')">
+    <span class="letter-forms" data-title="Qaf" onclick="playSound('qaf')">
       ق ققق
     </span><br>
-    <span class="letter-forms" title="Waw" onclick="playSound('waw')">
+    <span class="letter-forms" data-title="Waw" onclick="playSound('waw')">
       و و ـو ـو
     </span>
   </div>
@@ -315,80 +316,80 @@
 
   <div class="group" style="background-color: #e6f0e6;">
     <!-- Alif, and Ain -->
-    <span class="letter-forms" title="Alif" onclick="playSound('alif')">
+    <span class="letter-forms" data-title="Alif" onclick="playSound('alif')">
       ا ا ـا ـا
     </span><br>
-    <span class="letter-forms" title="Ayn" onclick="playSound('ain')">
+    <span class="letter-forms" data-title="Ayn" onclick="playSound('ain')">
       ع ععع
     </span>
   </div>
 
   <div class="group" style="background-color: #ffe6f0;">
     <!-- Semi-vowels/glides: Waw, Ya -->
-    <span class="letter-forms" title="Waw" onclick="playSound('waw')">
+    <span class="letter-forms" data-title="Waw" onclick="playSound('waw')">
       و و ـو ـو
     </span><br>
-    <span class="letter-forms" title="Ya" onclick="playSound('ya')">
+    <span class="letter-forms" data-title="Ya" onclick="playSound('ya')">
       ي ييي
     </span>
   </div>
 
   <div class="group" style="background-color: #f0e6ff;">
     <!-- Fricatives:Sad, Sin, Shin, Zay -->
-    <span class="letter-forms" title="Sad" onclick="playSound('sad')">
+    <span class="letter-forms" data-title="Sad" onclick="playSound('sad')">
       ص صصص
     </span>
-    <span class="letter-forms" title="Sin" onclick="playSound('sin')">
+    <span class="letter-forms" data-title="Sin" onclick="playSound('sin')">
       س سسس
     </span><br>
-    <span class="letter-forms" title="Shin" onclick="playSound('shin')">
+    <span class="letter-forms" data-title="Shin" onclick="playSound('shin')">
       ش ششش
     </span>
-    <span class="letter-forms" title="Zay" onclick="playSound('zay')">
+    <span class="letter-forms" data-title="Zay" onclick="playSound('zay')">
       ز ز ـز ـز
     </span>
   </div>
 
   <div class="group" style="background-color: #e6ffe6;">
     <!-- Dentals/Alveolars: Ta, Dal, Tha, Dhal -->
-    <span class="letter-forms" title="Ta" onclick="playSound('ta')">
+    <span class="letter-forms" data-title="Ta" onclick="playSound('ta')">
       ت تتت
     </span>
-    <span class="letter-forms" title="Tah" onclick="playSound('tta')">
+    <span class="letter-forms" data-title="Tah" onclick="playSound('tta')">
       ط ططط
     </span><br>
-    <span class="letter-forms" title="Dad" onclick="playSound('dad')">
+    <span class="letter-forms" data-title="Dad" onclick="playSound('dad')">
       ض ضضض
     </span>
-    <span class="letter-forms" title="Dal" onclick="playSound('dal')">
+    <span class="letter-forms" data-title="Dal" onclick="playSound('dal')">
       د د ـد ـد
     </span><br>
-    <span class="letter-forms" title="Dhal" onclick="playSound('dhal')">
+    <span class="letter-forms" data-title="Dhal" onclick="playSound('dhal')">
       ذ ذ ـذ ـذ
     </span>
-    <span class="letter-forms" title="Tha" onclick="playSound('tha')">
+    <span class="letter-forms" data-title="Tha" onclick="playSound('tha')">
       ث ثثث
     </span>
   </div>
 
   <div class="group" style="background-color: #e6ffff;">
     <!-- Velars/Uvulars: Kaf, Qaf, Kha, Ghayn, Ha, haa -->
-    <span class="letter-forms" title="Kaf" onclick="playSound('kaf')">
+    <span class="letter-forms" data-title="Kaf" onclick="playSound('kaf')">
       ك ككك
     </span>
-    <span class="letter-forms" title="Qaf" onclick="playSound('qaf')">
+    <span class="letter-forms" data-title="Qaf" onclick="playSound('qaf')">
       ق ققق
     </span><br>
-    <span class="letter-forms" title="Ghayn" onclick="playSound('ghayn')">
+    <span class="letter-forms" data-title="Ghayn" onclick="playSound('ghayn')">
       غ غغغ
     </span>
-    <span class="letter-forms" title="Kha" onclick="playSound('kha')">
+    <span class="letter-forms" data-title="Kha" onclick="playSound('kha')">
       خ خخخ
     </span><br>
-    <span class="letter-forms" title="Hha" onclick="playSound('haa')">
+    <span class="letter-forms" data-title="Hha" onclick="playSound('haa')">
       ح ححح
     </span>
-    <span class="letter-forms" title="Ha" onclick="playSound('ha')">
+    <span class="letter-forms" data-title="Ha" onclick="playSound('ha')">
       ه ههه
     </span>
   </div>
